@@ -16,8 +16,9 @@
      <i-nav :active='1' :breadcrumbs='breads'>
            
         <div class="context-login">
+          
           <Row >
-            <Col span="8">
+            <Col span="10">
                <div class="context-login-left">
                    <div class="context-login-title">
                      NOT YET REGISTERED?
@@ -48,7 +49,7 @@
                </div>
              </Card>
             </Col>
-           <Col span="16" >
+           <Col span="14" >
               <div class="context-login-right">
                   <div class="title">
                     Login to my space
@@ -69,7 +70,7 @@
                       <Input v-model="formValidate.password" type="password"  placeholder="请输入密码"></Input>
                     </FormItem>
                     <FormItem>
-                      <Button type="error" @click="handleSubmit('formValidate')">Submit</Button>
+                      <Button type="error" @click="handleSubmit('formValidate')">{{$t('btn.submit')}}</Button>
                     </FormItem>
                   </Form>
                    </div>
@@ -78,7 +79,7 @@
            </Col> 
            
           </Row> 
-           
+          
         </div>
       </i-nav>
      
@@ -111,7 +112,7 @@
           name: [
             {
               required: true,
-              message: '姓名不能为空',
+              message: this.$t('login.noemptyname'),
               trigger: 'blur'
             }
           ],

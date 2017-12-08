@@ -30,14 +30,12 @@
           </div>
       </Col>        
       </Row>
-       <Affix>
+       <Affix @on-change="change">
       <Row class="header-row" align="bottom">
 
         <Col  class="header-col" >
-        <div class="logo"></div> 
-        
         <div class="nav-bottom" >
-          
+          <img src="../../assets/images/logo.png" class="bounce" :class="{active:status}">
           <nav class="nav-menu">
             <ul class="nav-menu-ul">
               <li class="nav-menu-ul-li first" :class="active==0?'active':''">
@@ -108,6 +106,11 @@
                                     <Icon type="social-googleplus"></Icon>
                                 </span>
               </li>
+              <li class="nav-menu-ul-share">
+                <span class="share" @click="changelang">
+                                    {{language === 'zh' ? 'en' : 'zh'}}
+                                </span>
+              </li>
             </ul>
           </nav>
           
@@ -157,11 +160,14 @@ export default {
   },
   data () {
     return {
-      logined: !!this.$store.getters.getToken
+      logined: !!this.$store.getters.getToken,
+      status: false,
+      language: ''
     }
   },
   mounted () {
-
+    let sr = window.localStorage.getItem('language') || window.navigator.language || navigator.browserLanguage
+    this.language = sr.split('-')[0]
   },
   computed: {
 
@@ -171,8 +177,17 @@ export default {
     copyRight
   },
   methods: {
+    changelang () {
+      this.language = this.language === 'zh' ? 'en' : 'zh'
+      window.localStorage.setItem('language', this.language)
+
+      this.$i18n.locale = this.language
+    },
     changeLogo () {
 
+    },
+    change (a) {
+      this.status = a
     },
     clearToken () {
       this.$store.commit('logout', '')

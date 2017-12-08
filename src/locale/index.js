@@ -13,7 +13,8 @@ const messages = {
   en: Object.assign(enUs, iviewEn),
   zh: Object.assign(zhCN, ivewiZh)
 }
-let language = window.navigator.language || navigator.browserLanguage
+
+let language = window.localStorage.getItem('language') || window.navigator.language || navigator.browserLanguage
 // Create VueI18n instance with options
 const i18n = new VueI18n({
   locale: language.split('-')[0],  // set locale
