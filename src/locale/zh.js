@@ -1,3 +1,10 @@
+/*
+ * @Author: xubowen
+ * @Date: 2017-12-09 22:02:22
+ * @Last Modified by:   xubowen
+ * @Last Modified time: 2017-12-09 22:02:22
+ */
+
 let sources = {
   message: {
     hellow: '你好'

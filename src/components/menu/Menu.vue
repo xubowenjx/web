@@ -102,7 +102,7 @@
                                 </span>
               </li>
               <li class="nav-menu-ul-share">
-                <span class="share">
+                <span class="share" @click="sharsina">
                                     <Icon type="social-googleplus"></Icon>
                                 </span>
               </li>
@@ -185,6 +185,22 @@ export default {
     },
     changeLogo () {
 
+    },
+    sharsina () {
+      let top = window.screen.height / 2 - 350
+      let left = window.screen.width / 2 - 200
+      let title = 'say something?'
+      let rLink = window.location.href
+      console.log(rLink)
+      // let backUrl = 'http://wx.hengfu100.com//memberc_friend'
+      // let site = desc_
+      // let pic = 'http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg'
+      window.open('http://service.weibo.com/share/share.php?&title=' +
+       // pic=' + encodeURIComponent(pic) +
+        encodeURIComponent(title.replace(/ /g, ' ').replace(/<br \/>/g, ' ')) +
+         '&url=' + encodeURIComponent(rLink),
+        'share to sina weibo',
+        'height=550,width=1000,top=' + top + ',left=' + left + ',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
     },
     change (a) {
       this.status = a

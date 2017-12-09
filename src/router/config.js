@@ -11,15 +11,6 @@ export default [{
   },
   component: (resolve) => require(['@/views/about/about.vue'], resolve)
 },
-// {
-//   path: '/myspace/infos',
-
-//   meta: {
-//     requireAuth: true,
-//     title: 'myspace'
-//   },
-//   component: (resolve) => require(['@/views/mySpaceInfo.vue'], resolve)
-// },
 {
   path: '/login',
   meta: {
