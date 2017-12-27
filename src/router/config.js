@@ -18,4 +18,11 @@ export default [{
     title: 'login'
   },
   component: (resolve) => require(['@/views/login/login.vue'], resolve)
+}, {
+  path: '*',
+  meta: {
+    requireAuth: false,
+    title: 'login'
+  },
+  redirect: '/login'
 }]
