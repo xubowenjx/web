@@ -29,6 +29,6 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
   iview.LoadingBar.finish()
-  window.scrollTo(100, 100)
+  window.scrollTo(0, 0)
 })
 export default router
