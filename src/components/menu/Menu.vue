@@ -82,7 +82,7 @@
                 <a href="#">Service Guid<Icon type="arrow-down-b"></Icon></a>
 
                 <ul class="chid-nav">
-                  <li>菜单1</li>
+                  <li><router-link :to="'/table'">表格测试</router-link></li>
                   <li>菜单2</li>
                 </ul>
 

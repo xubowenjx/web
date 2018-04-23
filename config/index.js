@@ -62,7 +62,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'https://xubowenjx.github.io/web/',
+    assetsPublicPath: 'http://www.xubowen.top/web/',
 
     /**
      * Source Maps

@@ -18,7 +18,16 @@ export default [{
     title: 'login'
   },
   component: (resolve) => require(['@/views/login/login.vue'], resolve)
-}, {
+},
+{
+  path: '/table',
+  meta: {
+    requireAuth: false,
+    title: 'table'
+  },
+  component: (resolve) => require(['@/views/table/table.vue'], resolve)
+},
+{
   path: '*',
   meta: {
     requireAuth: false,
